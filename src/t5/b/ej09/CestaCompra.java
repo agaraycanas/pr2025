@@ -27,6 +27,7 @@ public class CestaCompra {
 	public Naranja getN() {
 		return this.n;
 	}
+	
 	public Limon getL() {
 		return this.l;
 	}
