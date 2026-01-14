@@ -1,26 +1,21 @@
 package pruebas;
 
+import java.util.Random;
+
 public class Prueba {
-public static void main(String[] args) {
+	public static void main(String[] args) {
 
-Abuelo ab =new Abuelo();
-ab.abuelo();
-ab.saludar();
-//ab.padre();
-//ab.hijo();
+		Cantante[] x = new Cantante[4];
+		for (int i=0;i<4;i++) {
+			x[i] = (new Random()).nextInt(2)==0 ? new CantanteOpera() : new CantanteRock();
+		}
+		for (int i=0;i<4;i++) {
+			x[i].cantar();
+		}
 
-System.out.println("=========");
-Abuelo pa = new Padre();
-pa.abuelo();
-//pa.padre();
-pa.saludar();
-//pa.hijo();
-
-System.out.println("=========");
-Abuelo hi = new Hijo();
-hi.abuelo();
-//hi.padre();
-//hi.hijo();
-hi.saludar();
-}
+		/*
+		Cantante cantante = new Cantante();
+		cantante.cantar();
+		*/
+	}
 }
