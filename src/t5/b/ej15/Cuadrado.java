@@ -9,6 +9,9 @@ public class Cuadrado {
 	public Cuadrado(float lado) {
 		this.lado = lado;
 	}
+	public float getLado() {
+		return lado;
+	}
 	public float area() {
 		return this.lado*this.lado;
 	}
