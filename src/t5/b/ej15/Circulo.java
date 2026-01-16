@@ -1,6 +1,6 @@
 package t5.b.ej15;
 
-public class Circulo {
+public class Circulo extends FiguraGeometrica {
 	// ATRIBUTOS
 		private final int PRECIO_POR_CM_CUADRADO = 150;
 		private final float PI = 3.141592f;
