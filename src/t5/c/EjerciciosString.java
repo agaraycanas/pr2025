@@ -10,6 +10,7 @@ public class EjerciciosString {
 		ej07();
 		ej08();
 		ej09();
+		ej10();
 	}
 
 	@SuppressWarnings("unused")
@@ -239,6 +240,30 @@ public class EjerciciosString {
 		c = 'x';
 		System.out.println(cadena + " [" + c + "] => " + numVecesChar(cadena, c));
 
+	}
+
+	private static void ej10() {
+		/*
+		 * Realizar y probar un método “quitaEspacios(String):String”, 
+		 * que dado un String, me devuelva el mismo String, 
+		 * pero sin espacios en blanco.
+		 */
+		String cadena;
+		System.out.println("============ EJ10 ================");
+		System.out.println("======== QUITA ESPACIOS ==========");
+
+		cadena = "  Patatas             Fritas         ";
+		System.out.println(cadena + " => \n" + quitaEspacios(cadena));
+		
+		cadena = "asdji oiajsd     sjidjs s & / 0 1 2 3";
+		System.out.println(cadena + " => \n" + quitaEspacios(cadena));
+		
+		cadena = "igualQueLaOriginal";
+		System.out.println(cadena + " => \n" + quitaEspacios(cadena));
+	}
+
+	private static String quitaEspacios(String cadena) {
+		return "-";
 	}
 
 	private static int numVecesChar(String cadena, char c) {
