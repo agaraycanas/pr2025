@@ -2,7 +2,7 @@ package t5.c;
 
 public class EjerciciosString {
 	public static void main(String[] args) {
-		ej06();
+		ej07();
 	}
 
 	private static void ej02() {
@@ -17,7 +17,7 @@ public class EjerciciosString {
 		System.out.println(c + ": " + esVocal(c));
 		c = 'u';
 		System.out.println(c + ": " + esVocal(c));
-	
+
 		c = 'A';
 		System.out.println(c + ": " + esVocal(c));
 		c = 'E';
@@ -28,17 +28,17 @@ public class EjerciciosString {
 		System.out.println(c + ": " + esVocal(c));
 		c = 'U';
 		System.out.println(c + ": " + esVocal(c));
-	
+
 		c = 'W';
 		System.out.println(c + ": " + esVocal(c));
 		c = 'J';
 		System.out.println(c + ": " + esVocal(c));
-	
+
 		c = 'r';
 		System.out.println(c + ": " + esVocal(c));
 		c = 'f';
 		System.out.println(c + ": " + esVocal(c));
-	
+
 		c = 'á';
 		System.out.println(c + ": " + esVocal(c));
 	}
@@ -76,6 +76,12 @@ public class EjerciciosString {
 	}
 
 	private static void ej05() {
+		/*
+		 * Realizar y probar un método llamado aMayuscula(char):char, que dado un char
+		 * me devuelva ese mismo char pero en mayúscula. Si el char inicial no era una
+		 * letra minúscula, se queda igual que estaba.
+		 */
+
 		char c;
 		c = 'a';
 		System.out.println(c + " => " + aMayuscula(c));
@@ -92,6 +98,11 @@ public class EjerciciosString {
 	}
 
 	private static void ej06() {
+		/*
+		 * Realizar y probar un método llamado aMinuscula(char):char, que dado un char
+		 * me devuelva ese mismo char pero en minúscula. Si el char inicial no era una
+		 * letra minúscula, se queda igual que estaba.
+		 */
 		char c;
 		c = 'a';
 		System.out.println(c + " => " + aMinuscula(c));
@@ -106,13 +117,39 @@ public class EjerciciosString {
 		c = '%';
 		System.out.println(c + " => " + aMinuscula(c));
 	}
-	
-	private static char aMayuscula(char c) {
+
+	private static void ej07() {
 		/*
-		 * Realizar y probar un método llamado aMayuscula(char):char, que dado un char
-		 * me devuelva ese mismo char pero en mayúscula. Si el char inicial no era una
-		 * letra minúscula, se queda igual que estaba.
+		 * Realizar y probar un método numMinusculas(String):int, que dado un String, me
+		 * devuelva un int que represente el número de minúsculas contenido en dicho
+		 * String.
 		 */
+		String cadena;
+
+		cadena = "aaBBcc";
+		System.out.println(cadena + ": " + numMinusculas(cadena));
+
+		cadena = "aabbcc";
+		System.out.println(cadena + ": " + numMinusculas(cadena));
+
+		cadena = "AABBCC";
+		System.out.println(cadena + ": " + numMinusculas(cadena));
+
+		cadena = "aB%.0x";
+		System.out.println(cadena + ": " + numMinusculas(cadena));
+	}
+
+	private static int numMinusculas(String cadena) {
+		int contador = 0;
+		for (int i = 0; i < cadena.length(); i++) {
+			if (esMinuscula(cadena.charAt(i))) {
+				contador++;
+			}
+		}
+		return contador;
+	}
+
+	private static char aMayuscula(char c) {
 		char solucion = c;
 		if (esMinuscula(c)) {
 			solucion = (char) (c - 32);
@@ -121,11 +158,7 @@ public class EjerciciosString {
 	}
 
 	private static char aMinuscula(char c) {
-		/*
-		 * Realizar y probar un método llamado aMinuscula(char):char, que dado un char
-		 * me devuelva ese mismo char pero en minúscula. Si el char inicial no era una
-		 * letra minúscula, se queda igual que estaba.
-		 */
+
 		char solucion = c;
 		if (esMayuscula(c)) {
 			solucion = (char) (c + 32);
