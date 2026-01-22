@@ -263,7 +263,14 @@ public class EjerciciosString {
 	}
 
 	private static String quitaEspacios(String cadena) {
-		return "-";
+		String solucion = "";
+		for (int i=0;i<cadena.length();i++) {
+			char c = cadena.charAt(i); 
+			if (c !=' ') {
+				solucion += c;
+			}
+		}
+		return solucion;
 	}
 
 	private static int numVecesChar(String cadena, char c) {
