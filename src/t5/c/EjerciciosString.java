@@ -11,6 +11,10 @@ public class EjerciciosString {
 		ej08();
 		ej09();
 		ej10();
+		ej11();
+		ej12();
+		ej13();
+		ej14();
 	}
 
 	@SuppressWarnings("unused")
@@ -244,9 +248,8 @@ public class EjerciciosString {
 
 	private static void ej10() {
 		/*
-		 * Realizar y probar un método “quitaEspacios(String):String”, 
-		 * que dado un String, me devuelva el mismo String, 
-		 * pero sin espacios en blanco.
+		 * Realizar y probar un método “quitaEspacios(String):String”, que dado un
+		 * String, me devuelva el mismo String, pero sin espacios en blanco.
 		 */
 		String cadena;
 		System.out.println("============ EJ10 ================");
@@ -254,19 +257,117 @@ public class EjerciciosString {
 
 		cadena = "  Patatas             Fritas         ";
 		System.out.println(cadena + " => \n" + quitaEspacios(cadena));
-		
+
 		cadena = "asdji oiajsd     sjidjs s & / 0 1 2 3";
 		System.out.println(cadena + " => \n" + quitaEspacios(cadena));
-		
+
 		cadena = "igualQueLaOriginal";
 		System.out.println(cadena + " => \n" + quitaEspacios(cadena));
 	}
 
+	private static void ej11() {
+		/*
+		 * Realizar y probar un método “reves(String):String”, que dado un String, me
+		 * devuelva el mismo String, pero al revés.
+		 */
+		String cadena;
+		System.out.println("============ EJ11 ================");
+		System.out.println("======== REVÉS ==========");
+
+		cadena = "Algo"; // "oglA"
+		System.out.println(cadena + " => \n" + reves(cadena));
+
+		cadena = "Dábale arroz a la zorra el abad"; // "oglA"
+		System.out.println(cadena + " => \n" + reves(cadena));
+
+	}
+
+	private static void ej12() {
+		/*
+		 * Realizar y probar un método “charAMay(String,char):String”, que dado un
+		 * String, devuelva el mismo String, en el que las apariciones del char
+		 * proporcionado han sido sustituidas por ese mismo char, pero en mayúsculas (si
+		 * no lo estuviera).
+		 */
+		String cadena;
+		char caracter;
+		System.out.println("============ EJ12 ================");
+		System.out.println("======== A MAYÚSUCULAS  ==========");
+
+		cadena = "xXxXaAaAbBbB";
+		caracter = 'a';
+		System.out.println(cadena + " [" + caracter + "] => " + charAMay(cadena, caracter));
+
+		cadena = "xXxXaAaAbBbB";
+		caracter = 'B';
+		System.out.println(cadena + " [" + caracter + "] => " + charAMay(cadena, caracter));
+
+		cadena = "xXxXaAaAbBbB";
+		caracter = 'f';
+		System.out.println(cadena + " [" + caracter + "] => " + charAMay(cadena, caracter));
+	}
+
+	private static void ej13() {
+		/*
+		 * Realizar y probar un método “vocAMay(String):String”, que dado un String,
+		 * devuelva el mismo String, en el que todas las vocales que contenga aparezcan
+		 * en mayúsculas.
+		 */
+		String cadena;
+		char caracter;
+		System.out.println("============ EJ12 ================");
+		System.out.println("======== A MAYÚSUCULAS  ==========");
+
+		cadena = "xXxXaAaAbBbBeEeE";
+		caracter = 'a';
+		System.out.println(cadena + " => " + vocAMay(cadena));
+
+	}
+
+	private static void ej14() {
+		/*
+		 * Realizar y probar un método “vocalizacion(String,char):String”, que dado un
+		 * String, devuelva otro en el que aparecen sustituidas todas las vocales que
+		 * contenga, por el char proporcionado.
+		 */
+	}
+
+	private static String vocAMay(String cadena) {
+		String solucion = "";
+		for (int i = 0; i < cadena.length(); i++) {
+			char caracterActual = cadena.charAt(i);
+			solucion += esVocal(caracterActual) ? aMayuscula(caracterActual) : caracterActual;
+		}
+		return solucion;
+	}
+
+	private static String charAMay(String cadena, char caracter) {
+		String solucion = "";
+		for (int i = 0; i < cadena.length(); i++) {
+			char caracterActual = cadena.charAt(i);
+			solucion += (aMinuscula(caracterActual) == aMinuscula(caracter) ? aMayuscula(caracterActual)
+					: caracterActual);
+		}
+		return solucion;
+	}
+
+	private static String reves(String cadena) {
+		String solucion = "";
+		/*
+		 * for (int i = cadena.length() - 1; i >= 0; i--) { solucion = solucion +
+		 * cadena.charAt(i); }
+		 */
+		for (int i = 0; i < cadena.length(); i++) {
+			solucion = cadena.charAt(i) + solucion;
+		}
+		return solucion;
+	}
+
 	private static String quitaEspacios(String cadena) {
 		String solucion = "";
-		for (int i=0;i<cadena.length();i++) {
-			char c = cadena.charAt(i); 
-			if (c !=' ') {
+		for (int i = 0; i < cadena.length(); i++) {
+			char c = cadena.charAt(i);
+			if (c != ' ') {
 				solucion += c;
 			}
 		}
@@ -276,11 +377,12 @@ public class EjerciciosString {
 	private static int numVecesChar(String cadena, char c) {
 		int contador = 0;
 		for (int i = 0; i < cadena.length(); i++) {
-			if ( aMinuscula(cadena.charAt(i)) == aMinuscula(c)) {
+			if (aMinuscula(cadena.charAt(i)) == aMinuscula(c)) {
 				contador++;
 			}
 		}
-		return contador;	}
+		return contador;
+	}
 
 	private static int numMinusculas(String cadena) {
 		int contador = 0;
