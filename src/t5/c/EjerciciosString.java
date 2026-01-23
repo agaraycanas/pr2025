@@ -15,11 +15,15 @@ public class EjerciciosString {
 		ej12();
 		ej13();
 		ej14();
+		ej15();
+		ej16();
 	}
 
 	@SuppressWarnings("unused")
 	private static void ej02() {
 		char c;
+
+		System.out.println();
 		System.out.println("============ EJ02 ================");
 		System.out.println("======== ¿ES VOCAL ? =============");
 
@@ -62,6 +66,8 @@ public class EjerciciosString {
 	@SuppressWarnings("unused")
 	private static void ej03() {
 		char c;
+
+		System.out.println();
 		System.out.println("============ EJ03 ================");
 		System.out.println("======== ¿ES MAYÚSCULA? =============");
 
@@ -82,6 +88,8 @@ public class EjerciciosString {
 	@SuppressWarnings("unused")
 	private static void ej04() {
 		char c;
+
+		System.out.println();
 		System.out.println("============ EJ04 ================");
 		System.out.println("======== ¿ES MINÚSCULA? =============");
 
@@ -108,6 +116,8 @@ public class EjerciciosString {
 		 */
 
 		char c;
+
+		System.out.println();
 		System.out.println("============ EJ05 ================");
 		System.out.println("======== CONVERTIR A MAYÚSCULA=============");
 
@@ -134,6 +144,7 @@ public class EjerciciosString {
 		 */
 		char c;
 
+		System.out.println();
 		System.out.println("============ EJ06 ================");
 		System.out.println("======== CONVERTIR A MINÚSCULA=============");
 
@@ -160,6 +171,7 @@ public class EjerciciosString {
 		 */
 		String cadena;
 
+		System.out.println();
 		System.out.println("============ EJ07 ================");
 		System.out.println("======== NÚMERO de MINÚSCULAS=============");
 
@@ -183,6 +195,7 @@ public class EjerciciosString {
 		 * vocales, respectivamente, en un determinado String.
 		 */
 		String cadena;
+		System.out.println();
 		System.out.println("============ EJ08 ================");
 		System.out.println("======== NÚMERO de MAYÚSCULAS=============");
 
@@ -221,6 +234,7 @@ public class EjerciciosString {
 		 */
 		String cadena;
 		char c;
+		System.out.println();
 		System.out.println("============ EJ09 ================");
 		System.out.println("======== NUM. VECES CHAR=============");
 
@@ -252,6 +266,7 @@ public class EjerciciosString {
 		 * String, me devuelva el mismo String, pero sin espacios en blanco.
 		 */
 		String cadena;
+		System.out.println();
 		System.out.println("============ EJ10 ================");
 		System.out.println("======== QUITA ESPACIOS ==========");
 
@@ -271,6 +286,7 @@ public class EjerciciosString {
 		 * devuelva el mismo String, pero al revés.
 		 */
 		String cadena;
+		System.out.println();
 		System.out.println("============ EJ11 ================");
 		System.out.println("======== REVÉS ==========");
 
@@ -291,8 +307,9 @@ public class EjerciciosString {
 		 */
 		String cadena;
 		char caracter;
+		System.out.println();
 		System.out.println("============ EJ12 ================");
-		System.out.println("======== A MAYÚSUCULAS  ==========");
+		System.out.println("======== A MAYÚSCULAS  ==========");
 
 		cadena = "xXxXaAaAbBbB";
 		caracter = 'a';
@@ -314,12 +331,11 @@ public class EjerciciosString {
 		 * en mayúsculas.
 		 */
 		String cadena;
-		char caracter;
-		System.out.println("============ EJ12 ================");
-		System.out.println("======== A MAYÚSUCULAS  ==========");
+		System.out.println();
+		System.out.println("============ EJ13 ================");
+		System.out.println("======== VOCALES A MAYÚSCULAS  ==========");
 
 		cadena = "xXxXaAaAbBbBeEeE";
-		caracter = 'a';
 		System.out.println(cadena + " => " + vocAMay(cadena));
 
 	}
@@ -330,6 +346,133 @@ public class EjerciciosString {
 		 * String, devuelva otro en el que aparecen sustituidas todas las vocales que
 		 * contenga, por el char proporcionado.
 		 */
+		String cadena;
+		char caracter;
+		System.out.println();
+		System.out.println("============ EJ14 ================");
+		System.out.println("======== VOCALIZACIÓN ==========");
+
+		cadena = "zabecidofug ZABECIDOFUG";
+		caracter = 'x';
+		System.out.println(cadena + " [" + caracter + "]=> " + vocalizacion(cadena, caracter));
+
+		cadena = "zabecidofug ZABECIDOFUG";
+		caracter = '*';
+		System.out.println(cadena + " [" + caracter + "]=> " + vocalizacion(cadena, caracter));
+	}
+
+	private static void ej15() {
+		/*
+		 * Realizar y probar un método “generoYNumero(String):String”, que dado un
+		 * String, devuelva otro String cuyos valores pueden ser “masculino singular”,
+		 * “masculino plural”, “femenino singular” o “femenino plural”, en función de la
+		 * terminación del String inicial. Hágase para casos básicos de sustantivos
+		 * “regulares”
+		 */
+		String cadena;
+		System.out.println();
+		System.out.println("============ EJ15 ================");
+		System.out.println("======== GÉNERO Y NÚMERO ==========");
+
+		cadena = "perrO";
+		System.out.println(cadena + "  => " + generoYNumero(cadena));
+
+		cadena = "perrOs";
+		System.out.println(cadena + "  => " + generoYNumero(cadena));
+
+		cadena = "peRra";
+		System.out.println(cadena + "  => " + generoYNumero(cadena));
+
+		cadena = "pErrAS";
+		System.out.println(cadena + "  => " + generoYNumero(cadena));
+
+		cadena = "SaltAR";
+		System.out.println(cadena + "  => " + generoYNumero(cadena));
+
+	}
+
+	private static void ej16() {
+		/*
+		 * Realizar y probar un método “quitaTildes(String):String”, que dado un String
+		 * me devuelva el mismo, pero sin tildes en las vocales que pudiera contener.
+		 * Para averiguar los códigos de ASCII extendido correspondientes con las
+		 * tildes, ajustar el ejercicio 1 para mostrar los códigos desde el 128 hasta el
+		 * 255.
+		 * 
+		 */
+		String cadena;
+		System.out.println();
+		System.out.println("============ EJ15 ================");
+		System.out.println("======== QUITA TILDES ==========");
+
+		cadena = "-x-aeiou-X-";
+		System.out.println(cadena + "  => " + quitaTildes(cadena));
+
+		cadena = "-x-AEIOU-X-";
+		System.out.println(cadena + "  => " + quitaTildes(cadena));
+
+		cadena = "-x-áéíóú-X-";
+		System.out.println(cadena + "  => " + quitaTildes(cadena));
+
+		cadena = "-x-ÁÉÍÓÚ-X-";
+		System.out.println(cadena + "  => " + quitaTildes(cadena));
+	}
+
+	private static String quitaTildes(String cadena) {
+		String solucion = "";
+		for (int i=0;i<cadena.length();i++) {
+			solucion += quitaTilde(cadena.charAt(i));
+		}
+		return solucion;
+	}
+
+	private static char quitaTilde(char caracter) {
+		char solucion='.';
+		switch (caracter) {
+			case 'á': solucion = 'a';break;
+			case 'é': solucion = 'e';break;
+			case 'í': solucion = 'i';break;
+			case 'ó': solucion = 'o';break;
+			case 'ú': solucion = 'u';break;
+			case 'Á': solucion = 'A';break;
+			case 'É': solucion = 'E';break;
+			case 'Í': solucion = 'I';break;
+			case 'Ó': solucion = 'O';break;
+			case 'Ú': solucion = 'U';break;
+			default: solucion = caracter;
+		}
+		return solucion;
+	}
+
+	private static String generoYNumero(String cadena) {
+		String solucion = "indefinido";
+
+		String cadenaEnMinuscula = cadena.toLowerCase();
+		char ultimaLetra = cadenaEnMinuscula.charAt(cadena.length() - 1);
+		String ultimosDosCaracteres = cadenaEnMinuscula.substring(cadena.length() - 2, cadena.length());
+
+		if (ultimaLetra == 'o') {
+			solucion = "masculino singular";
+		}
+		if (ultimaLetra == 'a') {
+			solucion = "femenino singular";
+		}
+		if (ultimosDosCaracteres.equals("os")) {
+			solucion = "masculino plural";
+		}
+		if (ultimosDosCaracteres.equals("as")) {
+			solucion = "femenino plural";
+		}
+		return solucion;
+	}
+
+	private static String vocalizacion(String cadena, char caracter) {
+		String solucion = "";
+		for (int i = 0; i < cadena.length(); i++) {
+			char caracterActual = cadena.charAt(i);
+			solucion += esVocal(caracterActual) ? caracter : caracterActual;
+		}
+		return solucion;
 	}
 
 	private static String vocAMay(String cadena) {
@@ -440,6 +583,6 @@ public class EjerciciosString {
 	private static boolean esVocal(char c) {
 		return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'á' || c == 'é' || c == 'í' || c == 'ó'
 				|| c == 'ú' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' || c == 'Á' || c == 'É'
-				|| c == 'Í' || c == 'Ó' || c == 'Ú';
+				|| c == 'Í' || c == 'Ó' || c == 'Ú' || c == 'Ü' || c == 'ü';
 	}
 }
