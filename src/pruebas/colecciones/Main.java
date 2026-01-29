@@ -8,11 +8,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		// Crear Coleccion de personas utilizando ARRAYS
-		Persona[] personasArray;
-		personasArray = new Persona[4];
+		Persona[] 			personasArray 		= new Persona[4];
 		
 		// Crear Coleccion de personas utilizando ArrayList
-		ArrayList<Persona> personasColeccion = new ArrayList<Persona>();
+		ArrayList<Persona> 	personasColeccion 	= new ArrayList<Persona>();
 		
 		// Añadir objetos a colección de arrays
 		personasArray[0] = new Persona("Pepe");
