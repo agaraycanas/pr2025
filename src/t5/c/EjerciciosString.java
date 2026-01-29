@@ -17,6 +17,7 @@ public class EjerciciosString {
 		ej14();
 		ej15();
 		ej16();
+		ej17();
 	}
 
 	@SuppressWarnings("unused")
@@ -402,7 +403,7 @@ public class EjerciciosString {
 		 */
 		String cadena;
 		System.out.println();
-		System.out.println("============ EJ15 ================");
+		System.out.println("============ EJ16 ================");
 		System.out.println("======== QUITA TILDES ==========");
 
 		cadena = "-x-aeiou-X-";
@@ -418,28 +419,94 @@ public class EjerciciosString {
 		System.out.println(cadena + "  => " + quitaTildes(cadena));
 	}
 
+	private static void ej17() {
+		/*
+		 * Realizar y probar un método “esPalindromo(String):boolean”, que dado un
+		 * String, me devuelva un boolean, que valga true si el String proporcionado es
+		 * un palíndromo y false en caso contrario. Conseguir que el método ignore los
+		 * espacios, sea “inmune” a tildes y no sea sensible a mayúsculas.
+		 */
+		String cadena;
+		System.out.println();
+		System.out.println("============ EJ17 ================");
+		System.out.println("======== PALÍNDROMOS ==========");
+
+		cadena = "Ni de broma es palíndromo";
+		System.out.println(cadena + "  => " + esPalindromo(cadena));
+		
+		cadena = "abba";
+		System.out.println(cadena + "  => " + esPalindromo(cadena));
+		
+		cadena = "Dábale arroz a la zorra el abad";
+		System.out.println(cadena + "  => " + esPalindromo(cadena));
+		
+		cadena = "Teseo el este";
+		System.out.println(cadena + "  => " + esPalindromo(cadena));
+
+		cadena = "A la catalana banal atácala";
+		System.out.println(cadena + "  => " + esPalindromo(cadena));
+
+		cadena = "Adán no cede con Eva y Yavé no cede con nada";
+		System.out.println(cadena + "  => " + esPalindromo(cadena));
+	
+		cadena = "Ana lava lana";
+		System.out.println(cadena + "  => " + esPalindromo(cadena));
+		
+		cadena = "Añora la roña";
+		System.out.println(cadena + "  => " + esPalindromo(cadena));
+	}
+
+	private static boolean esPalindromo(String cadena) {
+		String cadenaProcesada = cadena;
+		cadenaProcesada = quitaEspacios(cadenaProcesada);
+		cadenaProcesada = quitaTildes(cadenaProcesada);
+		cadenaProcesada = cadenaProcesada.toLowerCase();
+		return cadenaProcesada.equals(reves(cadenaProcesada));
+	}
+
 	private static String quitaTildes(String cadena) {
 		String solucion = "";
-		for (int i=0;i<cadena.length();i++) {
+		for (int i = 0; i < cadena.length(); i++) {
 			solucion += quitaTilde(cadena.charAt(i));
 		}
 		return solucion;
 	}
 
 	private static char quitaTilde(char caracter) {
-		char solucion='.';
+		char solucion = '.';
 		switch (caracter) {
-			case 'á': solucion = 'a';break;
-			case 'é': solucion = 'e';break;
-			case 'í': solucion = 'i';break;
-			case 'ó': solucion = 'o';break;
-			case 'ú': solucion = 'u';break;
-			case 'Á': solucion = 'A';break;
-			case 'É': solucion = 'E';break;
-			case 'Í': solucion = 'I';break;
-			case 'Ó': solucion = 'O';break;
-			case 'Ú': solucion = 'U';break;
-			default: solucion = caracter;
+		case 'á':
+			solucion = 'a';
+			break;
+		case 'é':
+			solucion = 'e';
+			break;
+		case 'í':
+			solucion = 'i';
+			break;
+		case 'ó':
+			solucion = 'o';
+			break;
+		case 'ú':
+			solucion = 'u';
+			break;
+		case 'Á':
+			solucion = 'A';
+			break;
+		case 'É':
+			solucion = 'E';
+			break;
+		case 'Í':
+			solucion = 'I';
+			break;
+		case 'Ó':
+			solucion = 'O';
+			break;
+		case 'Ú':
+			solucion = 'U';
+			break;
+		default:
+			solucion = caracter;
 		}
 		return solucion;
 	}
