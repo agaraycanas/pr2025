@@ -1,28 +1,12 @@
 package t7.pruebas;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.Objects;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Set<String> 	conjunto	= new TreeSet<String>();
-
-		conjunto.add("burro");
-		conjunto.add("a");
-		conjunto.add("disco");
-		
-		System.out.println(conjunto);
-		
-		System.out.println("===============");
-		conjunto.add("carro");
-		conjunto.add("amigo");
-		System.out.println(conjunto);
-		
-		
-		
+		String cadena1 = "Albe";
+		String cadena2 = "Zurriagazo";
+		System.out.println(cadena2.compareTo(cadena1));
 	}
-
 }
