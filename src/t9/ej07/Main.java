@@ -1,25 +1,28 @@
 package t9.ej07;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
+
+@SuppressWarnings("serial")
+class CeroException 	extends Exception {}
+@SuppressWarnings("serial")
+class ParException 		extends Exception {}
+@SuppressWarnings("serial")
+class ImparException 	extends Exception {}
 
 public class Main {
 	/*
-	 * Hacer una versión del programa anterior en el que se hubiera mostrado por
-	 * pantalla "El número es [ nulo | divisible por dos | NO divisible por dos ]"
-	 * NOTA: No se puede modificar el código de examinar(...) ni el de la clase
-	 * NumeroException
+	 * Hacer una versión del programa anterior, pero lanzando 3 tipos de excepciones
+	 * distintas: ParException, ImparException y CeroException
 	 */
-	private static void examinar(int x) throws NumeroException {
+	private static void examinar(int x) throws  CeroException, ParException, ImparException {
 		if (x == 0) {
-			throw new NumeroException("CERO");
+			throw new CeroException();
 		}
 		if (x % 2 == 0) {
-			throw new NumeroException("PAR");
+			throw new ParException();
 		}
 		if (x % 2 != 0) {
-			throw new NumeroException("IMPAR");
+			throw new ImparException();
 		}
 	}
 
@@ -31,36 +34,20 @@ public class Main {
 			int n = s.nextInt();
 			examinar(n);
 
-		} catch (NumeroException e) {
-			String mensaje = obtenerMensaje2(e.getMessage());
-			
-			System.out.println("El número es " + mensaje);
+		} catch (CeroException e) {
+			System.out.println("El número es nulo");
+		} catch (ParException e) {
+			System.out.println("El número es divisible por dos");
+		} catch (ImparException e) {
+			System.out.println("El número NO es divisible por dos");
 		} catch (Exception e) {
 			System.out.println("ERROR: " + e.getMessage());
 		}
-	}
-	private static String obtenerMensaje2(String mensaje) {
-		Map<String,String> traduccion = new HashMap<String,String>();
-		traduccion.put("CERO", "nulo");
-		traduccion.put("PAR", "divisible por dos");
-		traduccion.put("IMPAR", "NO divisible por dos");
-		return traduccion.get(mensaje);
+		
+		s.close();
+
 	}
 	
-	private static String obtenerMensaje(String mensaje) {
-		//nulo | divisible por dos | NO divisible por dos
-		String mensajeADevolver="";
-		switch (mensaje) {
-			case "CERO": 	mensajeADevolver="nulo";break;
-			case "PAR": 	mensajeADevolver="divisible por dos";break;
-			case "IMPAR": 	mensajeADevolver="NO divisible por dos";break;
-		}
-		return mensajeADevolver;
-	}
-}
 
-class NumeroException extends Exception {
-	public NumeroException(String mensaje) {
-		super(mensaje);
-	}
+	
 }
