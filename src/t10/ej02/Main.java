@@ -7,8 +7,9 @@ import java.nio.file.Path;
 public class Main {
 
 	public static void main(String[] args) {
-		if (args.length == 0) {
-			System.out.println("Debes introducir al menos un argumento de entrada");
+		if (args.length != 1) {
+			System.out.println("Debes introducir al un argumento de entrada");
+			System.out.println("Uso: t10.ej04.Main [nombreArchivo]");
 		} else {
 			String carpeta = "src/t10/ej02/";
 			String nombreArchivo = args[0] + ".txt";
