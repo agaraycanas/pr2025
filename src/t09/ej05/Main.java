@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Main {
 	/*
-	 * Hacer una clase Main con un método estático examinar(x:int) que lance una
+	 * Hacer una clase Main3 con un método estático examinar(x:int) que lance una
 	 * excepción personalizada de tipo NumeroException.
 	 * 
 	 * examinar(x:int) lanzará una excepción con el mensaje (asociado a
 	 * getMessage()) CERO si x valiera cero, PAR si x es par, e IMPAR si x es impar.
 	 * 
-	 * Desde el método main de Main, probar el método "examinar", leyendo un número
+	 * Desde el método main de Main3, probar el método "examinar", leyendo un número
 	 * por teclado, y examinando dicho número.
 	 * 
 	 * El programa mostrará un mensaje del estilo

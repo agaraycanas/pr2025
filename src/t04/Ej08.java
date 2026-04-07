@@ -16,7 +16,7 @@ public class Ej08 {
 			case "mul":		solucion = operando1 * operando2   ;break;
 			case "div":		solucion = operando1 / operando2   ;break;
 		}
-		System.out.println("Operacion: "+operacion);
+		System.out.println("Operacion3: "+operacion);
 		System.out.println("op1 = "+operando1+", op2 = "+operando2);
 		System.out.println(solucion);
 		System.out.println("FIN");
