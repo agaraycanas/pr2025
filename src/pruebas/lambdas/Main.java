@@ -41,7 +41,10 @@ public class Main {
 			:
 			Double.compare(p1.getPrecio(), p2.getPrecio())
 			;
-
+			
+		Comparator<Producto> porPrecioAscendente = 
+				(p1,p2) -> Double.compare(p1.getPrecio(), p2.getPrecio());
+				
 		
 		System.out.println("Número de productos (de informática): "+
 		productos.stream()
@@ -53,6 +56,14 @@ public class Main {
 			.count()
 			//.forEach(System.out::println);
 			);
+		
+		// Mueble más barato
+		System.out.println("======= MUEBLE MÁS BARATO ==============");
+		System.out.println(
+			productos.stream()
+				.filter(p->p.getCategoria().equals("muebles"))
+				.min(porPrecioAscendente).get()
+		);
 	}
 
 }
